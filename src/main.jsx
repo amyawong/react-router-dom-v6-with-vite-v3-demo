@@ -23,15 +23,26 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     // 3d.
-    errorElement: <ErrorPage />
+    errorElement: <ErrorPage />,
+
+    // // 4e.
+    // {
+    //   path: "contacts/:contactId",
+    //   element: <Contact />
+    // }
+    // 4f. open /contacts/1 to see rendered contact component
+
+    // 5a. move the contacts route to be a child of the root route
+    children: [
+      {
+        path: "/contacts/:contactId",
+        element: <Contact />,
+      },
+    ],
+    // 5b. go to src/routes/root.jsx
+    
   },
-  // 4e.
-  {
-    path: "contacts/:contactId",
-    element: <Contact />
-  }
 ]);
-// 4f. open /contacts/1 to see rendered contact component
 
 // 1b. pass in router into <RouterProvider />
 ReactDOM.createRoot(document.getElementById("root")).render(

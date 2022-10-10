@@ -3,6 +3,10 @@
   // first route is what often called the "root route" since the rest of routes will render inside of it. 
   // it will serve as the root layout of the UI, and will have nested layouts as it gets farther along.
 
+// 5b. via src/main.jsx
+// 5c. render an <Outlet />
+import { Outlet } from "react-router-dom";
+
 export default function Root() {
   return (
     <>
@@ -35,7 +39,10 @@ export default function Root() {
           </ul>
         </nav>
       </div>
-      <div id="detail"></div>
+      <div id="detail">
+        {/* 5c. */}
+        <Outlet />
+      </div>
     </>
   );
 }
