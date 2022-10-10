@@ -9,11 +9,17 @@ import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 // 2d. update root route's element
 import Root from "./routes/root";
 
+// 3c. via src/error-page.jsx
+// 3d. set the <ErrorPage> as the errorElement on the root route
+import ErrorPage from "./error-page";
+
 // 1a. create browser router and configure first route
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    // 3d.
+    errorElement: <ErrorPage />
   },
 ]);
 
@@ -25,3 +31,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 );
 
 // 2a. go to src/routes/root.jsx
+
+// 3a. go to src/error-page.jsx
